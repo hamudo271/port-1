@@ -3,6 +3,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowRight, Play, Star, MapPin, Phone, Clock, ShieldCheck, Award, HeartHandshake, Microscope, Stethoscope, GraduationCap, ShoppingBag } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import IntroOverlay from '../components/common/IntroOverlay';
+import CountUp from '../components/common/CountUp';
 import './Home.css';
 
 // --- Animation Variants ---
@@ -309,23 +310,51 @@ const Home = () => {
         <section className="section network-section">
           <div className="container">
             <div className="network-content text-center">
-              <span className="section-label">GLOBAL NETWORK</span>
-              <h2 className="section-title">World Class Clinic</h2>
-              <p className="section-desc">
+              <motion.span 
+                className="section-label"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+              >
+                GLOBAL NETWORK
+              </motion.span>
+              <motion.h2 
+                className="section-title"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.1 }}
+              >
+                World Class Clinic
+              </motion.h2>
+              <motion.p 
+                className="section-desc"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+              >
                 서울 강남 본점을 시작으로 전 세계로 뻗어나가는<br />
                 닥터모리모리의 글로벌 네트워크를 만나보세요.
-              </p>
+              </motion.p>
+              
               <div className="network-stats">
                 <div className="stat-box">
-                  <span className="stat-num">50,000+</span>
+                  <span className="stat-num">
+                    <CountUp end="50000" suffix="+" />
+                  </span>
                   <span className="stat-label">Patients</span>
                 </div>
                 <div className="stat-box">
-                  <span className="stat-num">8</span>
+                  <span className="stat-num">
+                    <CountUp end="8" />
+                  </span>
                   <span className="stat-label">Global Branches</span>
                 </div>
                 <div className="stat-box">
-                  <span className="stat-num">98%</span>
+                  <span className="stat-num">
+                    <CountUp end="98" suffix="%" />
+                  </span>
                   <span className="stat-label">Satisfaction</span>
                 </div>
               </div>

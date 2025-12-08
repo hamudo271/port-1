@@ -41,10 +41,22 @@ const HairLoss = () => {
       <section className="section split-section">
         <div className="container">
           <div className="split-layout">
-            <div className="split-image sticky-image">
+            <motion.div 
+              className="split-image sticky-image"
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
               <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=2070&auto=format&fit=crop" alt="Hair Transplant" />
-            </div>
-            <div className="split-content">
+            </motion.div>
+            <motion.div 
+              className="split-content"
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
               <span className="section-label">SURGERY</span>
               <h2 className="section-title">비절개 모발이식<br />(FUE)</h2>
               <p className="section-desc">
@@ -57,7 +69,7 @@ const HairLoss = () => {
                 <li><Check size={20} className="check-icon" /> <span>생착률 95% 이상의 고밀도 이식</span></li>
                 <li><Check size={20} className="check-icon" /> <span>수술 다음날 샴푸 가능</span></li>
               </ul>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>

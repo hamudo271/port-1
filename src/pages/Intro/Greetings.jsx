@@ -166,8 +166,8 @@ const Greetings = () => {
                   className="timeline-item"
                   initial={{ opacity: 0, x: -30 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ delay: index * 0.15, duration: 0.6 }}
                 >
                   <div className="year">{item.year}</div>
                   <div className="content">
