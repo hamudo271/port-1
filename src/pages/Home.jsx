@@ -306,56 +306,75 @@ const Home = () => {
           </div>
         </section>
 
-        {/* 9. Global Network (World Class Clinic) */}
+        {/* 9. Global Network (Nasmedia Style) */}
         <section className="section network-section">
-          <div className="network-bg">
-            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop" alt="World Map" />
-            <div className="network-overlay"></div>
-          </div>
-          
-          <div className="container network-container">
-            <div className="network-content-wrapper">
-              <motion.div 
-                className="network-text-group"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-              >
-                <span className="section-label text-accent">GLOBAL NETWORK</span>
-                <h2 className="section-title text-white">
-                  World Class<br />
-                  Clinic Standard
-                </h2>
-                <p className="section-desc text-white-50">
-                  서울 강남 본점을 시작으로 전 세계 8개국, 5만여 명의 환자가 선택한<br />
-                  닥터모리모리의 글로벌 스탠다드 의료 서비스를 경험하세요.
-                </p>
-                <Link to="/network" className="btn-primary network-btn">
-                  Global Branches <ArrowRight size={18} />
-                </Link>
-              </motion.div>
+          <div className="container">
+            <div className="network-wrapper">
+              <div className="network-header">
+                <motion.span 
+                  className="network-label"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                >
+                  GLOBAL NETWORK
+                </motion.span>
+                <motion.h2 
+                  className="network-title"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.1 }}
+                >
+                  World Class<br />Clinic Standard
+                </motion.h2>
+                <motion.p 
+                  className="network-desc"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.2 }}
+                >
+                  닥터모리모리는 서울 강남 본점을 시작으로<br />
+                  전 세계 8개국, 5만여 명의 환자와 함께합니다.
+                </motion.p>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.3 }}
+                >
+                  <Link to="/network" className="network-link-btn">
+                    Global Branches <ArrowRight size={16} />
+                  </Link>
+                </motion.div>
+              </div>
 
-              <div className="network-stats-grid">
-                {[
-                  { label: "Patients", value: "50,000", suffix: "+" },
-                  { label: "Global Branches", value: "8", suffix: "" },
-                  { label: "Satisfaction", value: "98", suffix: "%" },
-                  { label: "Since", value: "1998", suffix: "" }
-                ].map((stat, index) => (
-                  <motion.div 
-                    key={index}
-                    className="stat-card-glass"
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.1 }}
-                  >
-                    <span className="stat-value">
-                      <CountUp end={parseInt(stat.value.replace(/,/g, ''))} suffix={stat.suffix} />
-                    </span>
-                    <span className="stat-label-small">{stat.label}</span>
-                  </motion.div>
-                ))}
+              <div className="network-visual">
+                <div className="network-stats-row">
+                  {[
+                    { label: "Patients", value: "50,000", suffix: "+" },
+                    { label: "Global Branches", value: "8", suffix: "개국" },
+                    { label: "Satisfaction", value: "98", suffix: "%" }
+                  ].map((stat, index) => (
+                    <motion.div 
+                      key={index}
+                      className="network-stat-item"
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: 0.2 + (index * 0.1) }}
+                    >
+                      <span className="n-stat-value">
+                        <CountUp end={parseInt(stat.value.replace(/,/g, ''))} suffix={stat.suffix} />
+                      </span>
+                      <span className="n-stat-label">{stat.label}</span>
+                    </motion.div>
+                  ))}
+                </div>
+                <div className="network-map-image">
+                   <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop" alt="Global Network Map" />
+                </div>
               </div>
             </div>
           </div>
