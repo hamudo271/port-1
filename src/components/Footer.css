@@ -1,0 +1,29 @@
+.footer {
+  background-color: #1a1a1a;
+  color: #888;
+  padding: 60px 0;
+  margin-top: auto;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.footer-logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+}
+
+.footer-info p {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.copyright {
+  margin-top: 20px;
+  font-size: 12px;
+  color: #555;
+}

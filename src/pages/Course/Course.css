@@ -1,0 +1,127 @@
+/* Course Subpages Styles */
+.course-header {
+  margin-bottom: 60px;
+  text-align: center;
+  background-color: #f5f5f5;
+  padding: 60px 20px;
+  border-radius: 12px;
+}
+
+.course-header h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.course-intro {
+  font-size: 18px;
+  color: #555;
+  line-height: 1.6;
+}
+
+.course-section {
+  margin-bottom: 80px;
+}
+
+.course-section h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.section-desc {
+  margin-bottom: 30px;
+  color: #666;
+}
+
+.program-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.step-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.step-header {
+  background-color: var(--color-accent);
+  color: white;
+  padding: 15px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.step-card h4 {
+  padding: 20px;
+  font-size: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.step-card ul {
+  padding: 20px;
+  list-style: disc;
+  padding-left: 40px;
+}
+
+.step-card li {
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.differentiation-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.diff-item {
+  background: #fff;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  padding: 30px;
+  border-radius: 12px;
+}
+
+.diff-item h4 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: var(--color-accent);
+}
+
+.course-stats {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.stat-box {
+  background: #333;
+  color: white;
+  padding: 60px;
+  border-radius: 12px;
+  display: inline-block;
+  min-width: 300px;
+}
+
+.stat-box h3 {
+  font-size: 48px;
+  margin-bottom: 10px;
+  color: var(--color-accent);
+}
+
+.stat-box p {
+  font-size: 18px;
+  margin-bottom: 20px;
+  opacity: 0.8;
+}
+
+.stat-detail {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .program-steps, .differentiation-grid {
+    grid-template-columns: 1fr;
+  }
+}

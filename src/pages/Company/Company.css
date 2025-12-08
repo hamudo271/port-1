@@ -1,0 +1,98 @@
+.subpage-content-inner {
+  animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Greetings Styles */
+.greetings-header {
+  margin-bottom: 40px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 20px;
+}
+
+.greetings-header h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.greetings-subtitle {
+  font-size: 18px;
+  color: #666;
+}
+
+.greetings-body p {
+  font-size: 16px;
+  line-height: 1.8;
+  margin-bottom: 24px;
+  color: #333;
+}
+
+.signature {
+  margin-top: 60px;
+  text-align: right;
+  font-size: 18px;
+}
+
+/* Vision Styles */
+.vision-section, .mission-section, .core-values-section {
+  margin-bottom: 80px;
+}
+
+.section-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 16px;
+}
+
+.vision-statement, .mission-statement {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: #000;
+}
+
+.values-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+
+@media (min-width: 768px) {
+  .values-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.value-card {
+  background: #f9f9f9;
+  padding: 40px;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.value-card:hover {
+  transform: translateY(-5px);
+}
+
+.value-card h3 {
+  font-size: 20px;
+  color: var(--color-accent);
+  margin-bottom: 8px;
+}
+
+.value-card h4 {
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+.value-card p {
+  color: #666;
+  line-height: 1.6;
+}

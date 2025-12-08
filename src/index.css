@@ -1,0 +1,79 @@
+:root {
+  /* Light Mode (Default) */
+  --color-primary: #004d40; /* Deep Green - Trust & Nature */
+  --color-secondary: #008080; /* Teal */
+  --color-accent: #88cc00; /* Sprout Green */
+  --color-gold: #d4af37; /* Premium Gold */
+  --color-text: #333333;
+  --color-bg: #ffffff;
+  --color-bg-secondary: #f8f9fa;
+  --color-border: #e5e5e5;
+  --color-glass: rgba(255, 255, 255, 0.8);
+  --color-glass-border: rgba(255, 255, 255, 0.3);
+  
+  --font-main: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+  --font-serif: "Playfair Display", serif;
+}
+
+[data-theme='dark'] {
+  /* Dark Mode (Deep Forest Green) */
+  --color-primary: #ffffff; /* White text for primary headings */
+  --color-secondary: #88cc00; /* Sprout Green becomes secondary accent */
+  --color-accent: #d4af37; /* Gold becomes primary accent */
+  --color-text: #e0e0e0; /* Light Gray text */
+  --color-bg: #0a1f1c; /* Deep Forest Green */
+  --color-bg-secondary: #0f2925; /* Slightly lighter green */
+  --color-border: #1a3c36;
+  --color-glass: rgba(10, 31, 28, 0.8);
+  --color-glass-border: rgba(255, 255, 255, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-main);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul, li {
+  list-style: none;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* Utility classes */
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 60px;
+}
+
+.text-gradient {
+  background: linear-gradient(to right, var(--color-primary), var(--color-accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+[data-theme='dark'] .text-gradient {
+  background: linear-gradient(to right, #fff, var(--color-gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
