@@ -306,57 +306,56 @@ const Home = () => {
           </div>
         </section>
 
-        {/* 9. Global Network (Map) */}
+        {/* 9. Global Network (World Class Clinic) */}
         <section className="section network-section">
-          <div className="container">
-            <div className="network-content text-center">
-              <motion.span 
-                className="section-label"
-                initial={{ opacity: 0, y: 20 }}
+          <div className="network-bg">
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop" alt="World Map" />
+            <div className="network-overlay"></div>
+          </div>
+          
+          <div className="container network-container">
+            <div className="network-content-wrapper">
+              <motion.div 
+                className="network-text-group"
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
               >
-                GLOBAL NETWORK
-              </motion.span>
-              <motion.h2 
-                className="section-title"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.1 }}
-              >
-                World Class Clinic
-              </motion.h2>
-              <motion.p 
-                className="section-desc"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.2 }}
-              >
-                서울 강남 본점을 시작으로 전 세계로 뻗어나가는<br />
-                닥터모리모리의 글로벌 네트워크를 만나보세요.
-              </motion.p>
-              
-              <div className="network-stats">
-                <div className="stat-box">
-                  <span className="stat-num">
-                    <CountUp end="50000" suffix="+" />
-                  </span>
-                  <span className="stat-label">Patients</span>
-                </div>
-                <div className="stat-box">
-                  <span className="stat-num">
-                    <CountUp end="8" />
-                  </span>
-                  <span className="stat-label">Global Branches</span>
-                </div>
-                <div className="stat-box">
-                  <span className="stat-num">
-                    <CountUp end="98" suffix="%" />
-                  </span>
-                  <span className="stat-label">Satisfaction</span>
-                </div>
+                <span className="section-label text-accent">GLOBAL NETWORK</span>
+                <h2 className="section-title text-white">
+                  World Class<br />
+                  Clinic Standard
+                </h2>
+                <p className="section-desc text-white-50">
+                  서울 강남 본점을 시작으로 전 세계 8개국, 5만여 명의 환자가 선택한<br />
+                  닥터모리모리의 글로벌 스탠다드 의료 서비스를 경험하세요.
+                </p>
+                <Link to="/network" className="btn-primary network-btn">
+                  Global Branches <ArrowRight size={18} />
+                </Link>
+              </motion.div>
+
+              <div className="network-stats-grid">
+                {[
+                  { label: "Patients", value: "50,000", suffix: "+" },
+                  { label: "Global Branches", value: "8", suffix: "" },
+                  { label: "Satisfaction", value: "98", suffix: "%" },
+                  { label: "Since", value: "1998", suffix: "" }
+                ].map((stat, index) => (
+                  <motion.div 
+                    key={index}
+                    className="stat-card-glass"
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 }}
+                  >
+                    <span className="stat-value">
+                      <CountUp end={parseInt(stat.value.replace(/,/g, ''))} suffix={stat.suffix} />
+                    </span>
+                    <span className="stat-label-small">{stat.label}</span>
+                  </motion.div>
+                ))}
               </div>
             </div>
           </div>
