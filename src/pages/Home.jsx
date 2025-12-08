@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { ArrowRight, Play, Star, MapPin, Phone, Clock, ShieldCheck, Award, HeartHandshake, Microscope, Stethoscope, GraduationCap, ShoppingBag } from 'lucide-react';
+import { ArrowRight, Play, ShieldCheck, Award, HeartHandshake, Microscope, Stethoscope, GraduationCap, ShoppingBag } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import IntroOverlay from '../components/common/IntroOverlay';
 import CountUp from '../components/common/CountUp';

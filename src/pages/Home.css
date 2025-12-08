@@ -702,4 +702,8 @@
   .process-timeline::before { width: 1px; height: 100%; top: 0; left: 30px; }
   .step-circle { margin: 0 0 10px 0; }
   .process-step { display: flex; align-items: center; gap: 20px; text-align: left; }
+  
+  /* Network Section Responsive */
+  .network-stats { flex-direction: column; gap: 40px; }
+  .stat-num { font-size: 48px; }
 }
