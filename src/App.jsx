@@ -1,40 +1,60 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import SubpageLayout from './components/SubpageLayout';
-import Home from './pages/Home';
-import * as Intro from './pages/Intro';
-import * as Treatments from './pages/Treatments';
-import * as Process from './pages/Process';
-import Location from './pages/Location/Location';
 import './App.css';
+
+// Lazy Load Pages
+const Home = lazy(() => import('./pages/Home'));
+const Greetings = lazy(() => import('./pages/Intro/Greetings'));
+const Philosophy = lazy(() => import('./pages/Intro/Philosophy'));
+const HairLoss = lazy(() => import('./pages/Treatments/HairLoss'));
+const ScalpCare = lazy(() => import('./pages/Treatments/ScalpCare'));
+const Steps = lazy(() => import('./pages/Process/Steps'));
+const Location = lazy(() => import('./pages/Location/Location'));
+
+// Loading Component
+const Loading = () => (
+  <div style={{ 
+    height: '100vh', 
+    display: 'flex', 
+    justifyContent: 'center', 
+    alignItems: 'center', 
+    background: '#fff',
+    color: '#004d40'
+  }}>
+    Loading...
+  </div>
+);
 
 function App() {
   return (
     <BrowserRouter basename="/port-1/">
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="intro" element={<SubpageLayout title="Clinic Intro" />}>
-            <Route path="greetings" element={<Intro.Greetings />} />
-            <Route path="philosophy" element={<Intro.Philosophy />} />
-            <Route index element={<Intro.Greetings />} />
-          </Route>
-          
-          <Route path="treatments" element={<SubpageLayout title="Treatments" />}>
-            <Route path="hair-loss" element={<Treatments.HairLoss />} />
-            <Route path="scalp-care" element={<Treatments.ScalpCare />} />
-            <Route index element={<Treatments.HairLoss />} />
-          </Route>
+      <Suspense fallback={<Loading />}>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="intro" element={<SubpageLayout title="Clinic Intro" />}>
+              <Route path="greetings" element={<Greetings />} />
+              <Route path="philosophy" element={<Philosophy />} />
+              <Route index element={<Greetings />} />
+            </Route>
+            
+            <Route path="treatments" element={<SubpageLayout title="Treatments" />}>
+              <Route path="hair-loss" element={<HairLoss />} />
+              <Route path="scalp-care" element={<ScalpCare />} />
+              <Route index element={<HairLoss />} />
+            </Route>
 
-          <Route path="process" element={<SubpageLayout title="Process" />}>
-            <Route path="steps" element={<Process.Steps />} />
-            <Route index element={<Process.Steps />} />
-          </Route>
+            <Route path="process" element={<SubpageLayout title="Process" />}>
+              <Route path="steps" element={<Steps />} />
+              <Route index element={<Steps />} />
+            </Route>
 
-          <Route path="location" element={<Location />} />
-        </Route>
-      </Routes>
+            <Route path="location" element={<Location />} />
+          </Route>
+        </Routes>
+      </Suspense>
     </BrowserRouter>
   );
 }
